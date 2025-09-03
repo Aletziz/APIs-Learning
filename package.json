@@ -1,0 +1,33 @@
+{
+  "name": "api-learning-platform",
+  "version": "1.0.0",
+  "description": "Plataforma web interactiva para aprender todo sobre APIs - Frontend, Backend y Base de Datos",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js",
+    "build": "node backend/setup-database.js",
+    "install-deps": "npm install",
+    "setup-db": "node backend/setup-database.js",
+    "postinstall": "npm run setup-db"
+  },
+  "keywords": ["api", "tutorial", "learning", "express", "nodejs", "database"],
+  "author": "API Learning Platform",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "sqlite3": "^5.1.6",
+    "jsonwebtoken": "^9.0.2",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.1.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
