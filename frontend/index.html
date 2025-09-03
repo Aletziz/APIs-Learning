@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Learning Platform - Aprende Todo Sobre APIs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <div class="brand-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-title">API Learning</span>
+                    <span class="brand-subtitle">Platform</span>
+                </div>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active" data-section="home">
+                    <i class="fas fa-home"></i>
+                    <span>Inicio</span>
+                </a></li>
+                <li><a href="#tutorials" class="nav-link" data-section="tutorials">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Tutoriales</span>
+                </a></li>
+                <li><a href="#api-tester" class="nav-link" data-section="api-tester">
+                    <i class="fas fa-flask"></i>
+                    <span>Probador</span>
+                </a></li>
+                <li><a href="#examples" class="nav-link" data-section="examples">
+                    <i class="fas fa-code-branch"></i>
+                    <span>Ejemplos</span>
+                </a></li>
+                <li><a href="#auth" class="nav-link" data-section="auth">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Auth</span>
+                </a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <div class="auth-buttons">
+                    <button class="btn btn-outline" id="loginBtn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Iniciar Sesión</span>
+                    </button>
+                    <button class="btn btn-primary" id="registerBtn">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Registrarse</span>
+                    </button>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Aprende <span class="gradient-text">APIs</span> de forma
+                        <span class="gradient-text">Interactiva</span>
+                    </h1>
+                    <p class="hero-description">
+                        Domina el mundo de las APIs con nuestra plataforma completa. 
+                        Desde conceptos básicos hasta implementaciones avanzadas con 
+                        autenticación JWT y bases de datos reales.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-large" onclick="scrollToSection('tutorials')">
+                            <i class="fas fa-play"></i>
+                            Comenzar Ahora
+                        </button>
+                        <button class="btn btn-outline btn-large" onclick="scrollToSection('api-tester')">
+                            <i class="fas fa-flask"></i>
+                            Probar APIs
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="api-demo-card">
+                        <div class="card-header">
+                            <span class="method get">GET</span>
+                            <span class="endpoint">/api/users</span>
+                        </div>
+                        <div class="card-body">
+                            <pre class="code-preview">{
+  "success": true,
+  "data": [
+    {
+      "id": 1,
+      "name": "Juan Pérez",
+      "email": "juan@email.com"
+    }
+  ]
+}</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">¿Qué Aprenderás?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h3>Métodos HTTP</h3>
+                        <p>GET, POST, PUT, DELETE y más. Aprende cuándo y cómo usar cada método HTTP correctamente.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Autenticación JWT</h3>
+                        <p>Implementa autenticación segura con JSON Web Tokens y middleware de seguridad.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Base de Datos</h3>
+                        <p>Conecta tus APIs con bases de datos SQLite y realiza operaciones CRUD completas.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Ejemplos Reales</h3>
+                        <p>Proyectos prácticos que puedes usar en aplicaciones empresariales reales.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tutorials Section -->
+        <section id="tutorials" class="tutorials">
+            <div class="container">
+                <h2 class="section-title">Tutoriales Interactivos</h2>
+                <div class="tutorials-filters">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="beginner">Principiante</button>
+                    <button class="filter-btn" data-filter="intermediate">Intermedio</button>
+                    <button class="filter-btn" data-filter="advanced">Avanzado</button>
+                </div>
+                <div class="tutorials-grid" id="tutorialsGrid">
+                    <!-- Los tutoriales se cargarán dinámicamente -->
+                </div>
+            </div>
+        </section>
+
+        <!-- API Tester Section -->
+        <section id="api-tester" class="api-tester">
+            <div class="container">
+                <h2 class="section-title">Probador de APIs en Vivo</h2>
+                <div class="info-note">
+                    <i class="fas fa-info-circle"></i>
+                    <p><strong>Consejo:</strong> Para probar correctamente los endpoints POST, PUT y DELETE, usa los botones de ejemplo específicos en la sección "Ejemplos de APIs" arriba. Estos cargan automáticamente los datos y URLs correctos.</p>
+                </div>
+                <div class="api-tester-container">
+                    <div class="request-panel">
+                        <h3>Configurar Petición</h3>
+                        <div class="request-form">
+                            <div class="form-group">
+                                <label>Método HTTP</label>
+                                <select id="httpMethod" class="form-control">
+                                    <option value="GET">GET</option>
+                                    <option value="POST">POST</option>
+                                    <option value="PUT">PUT</option>
+                                    <option value="DELETE">DELETE</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>URL del Endpoint</label>
+                                <input type="text" id="apiUrl" class="form-control" 
+                                       value="/api/users" placeholder="/api/endpoint">
+                            </div>
+                            <div class="form-group">
+                                <label>Headers (JSON)</label>
+                                <textarea id="requestHeaders" class="form-control" rows="3" 
+                                          placeholder='{"Content-Type": "application/json"}'></textarea>
+                            </div>
+                            <div class="form-group" id="bodyGroup" style="display: none;">
+                                <label>Body (JSON)</label>
+                                <textarea id="requestBody" class="form-control" rows="5" 
+                                          placeholder='{"name": "Juan", "email": "juan@email.com"}'></textarea>
+                            </div>
+                            <button class="btn btn-primary" id="sendRequest">
+                                <i class="fas fa-paper-plane"></i>
+                                Enviar Petición
+                            </button>
+                        </div>
+                    </div>
+                    <div class="response-panel">
+                        <h3>Respuesta del Servidor</h3>
+                        <div class="response-info">
+                            <span class="status-code" id="statusCode">-</span>
+                            <span class="response-time" id="responseTime">- ms</span>
+                        </div>
+                        <pre class="response-body" id="responseBody">Envía una petición para ver la respuesta...</pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Examples Section -->
+        <section id="examples" class="examples">
+            <div class="container">
+                <h2 class="section-title">Ejemplos Prácticos</h2>
+                <div class="examples-grid">
+                    <div class="example-card">
+                        <h3>Gestión de Usuarios</h3>
+                        <p>CRUD completo para usuarios con validaciones. <strong>Usa los botones específicos para cada operación:</strong></p>
+                        <div class="example-endpoints">
+                            <span class="endpoint-tag get">GET /api/users</span>
+                            <span class="endpoint-tag post">POST /api/users</span>
+                            <span class="endpoint-tag put">PUT /api/users/:id</span>
+                            <span class="endpoint-tag delete">DELETE /api/users/:id</span>
+                        </div>
+                        <div class="example-buttons">
+                            <button class="btn btn-outline btn-sm" onclick="loadExample('users')">Listar</button>
+                            <button class="btn btn-outline btn-sm" onclick="loadExample('createUser')">Crear</button>
+                            <button class="btn btn-outline btn-sm" onclick="loadExample('updateUser')">Actualizar</button>
+                            <button class="btn btn-outline btn-sm" onclick="loadExample('deleteUser')">Eliminar</button>
+                        </div>
+                    </div>
+                    <div class="example-card">
+                        <h3>Catálogo de Productos</h3>
+                        <p>API para gestionar productos con filtros y paginación</p>
+                        <div class="example-endpoints">
+                            <span class="endpoint-tag get">GET /api/products</span>
+                            <span class="endpoint-tag post">POST /api/products</span>
+                        </div>
+                        <button class="btn btn-outline" onclick="loadExample('products')">Ver Ejemplo</button>
+                    </div>
+                    <div class="example-card">
+                        <h3>Autenticación JWT</h3>
+                        <p>Sistema completo de autenticación y autorización</p>
+                        <div class="example-endpoints">
+                            <span class="endpoint-tag post">POST /auth/login</span>
+                            <span class="endpoint-tag post">POST /auth/register</span>
+                            <span class="endpoint-tag get">GET /auth/profile</span>
+                        </div>
+                        <button class="btn btn-outline" onclick="loadExample('auth')">Ver Ejemplo</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Auth Section -->
+        <section id="auth" class="auth-section">
+            <div class="container">
+                <h2 class="section-title">Autenticación</h2>
+                <div class="auth-container">
+                    <div class="auth-tabs">
+                        <button class="tab-btn active" data-tab="login">Iniciar Sesión</button>
+                        <button class="tab-btn" data-tab="register">Registrarse</button>
+                    </div>
+                    
+                    <!-- Login Form -->
+                    <div class="tab-content active" id="loginTab">
+                        <form class="auth-form" id="loginForm">
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Contraseña</label>
+                                <input type="password" name="password" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">
+                                <i class="fas fa-sign-in-alt"></i>
+                                Iniciar Sesión
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Register Form -->
+                    <div class="tab-content" id="registerTab">
+                        <form class="auth-form" id="registerForm">
+                            <div class="form-group">
+                                <label>Nombre</label>
+                                <input type="text" name="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Contraseña</label>
+                                <input type="password" name="password" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">
+                                <i class="fas fa-user-plus"></i>
+                                Registrarse
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- User Profile (hidden by default) -->
+                    <div class="user-profile" id="userProfile" style="display: none;">
+                        <h3>Perfil de Usuario</h3>
+                        <div class="profile-info">
+                            <p><strong>Nombre:</strong> <span id="userName"></span></p>
+                            <p><strong>Email:</strong> <span id="userEmail"></span></p>
+                            <p><strong>Rol:</strong> <span id="userRole"></span></p>
+                        </div>
+                        <button class="btn btn-outline" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Cerrar Sesión
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>API Learning Platform</h4>
+                    <p>La mejor plataforma para aprender APIs de forma práctica e interactiva.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="#tutorials">Tutoriales</a></li>
+                        <li><a href="#examples">Ejemplos</a></li>
+                        <li><a href="#api-tester">Probador de APIs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Tecnologías</h4>
+                    <ul>
+                        <li>Node.js & Express</li>
+                        <li>SQLite Database</li>
+                        <li>JWT Authentication</li>
+                        <li>RESTful APIs</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 API Learning Platform. Proyecto educativo para aprender desarrollo de APIs.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Cargando...</p>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <div class="notification-content">
+            <i class="notification-icon"></i>
+            <span class="notification-message"></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
